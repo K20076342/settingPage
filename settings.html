@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User Settings Page</title>
+    <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="SettingsPage">
+
+        <div class="goback">
+            <button class="gobackbtn" onclick="goBack()">Go Back</button>
+        </div>
+
+        <div class="container">
+            <div class="leftbox">
+                <nav>
+                    <a onclick="tabs(0)" class="tab active">
+                        <i class="fa fa-user fa-lg fa-user-my"></i>
+                    </a>
+
+                    <a onclick="tabs(1)" class="tab">
+                        <i class="fa fa-credit-card fa-card-my fa-lg"></i>
+                    </a>
+
+
+                </nav>
+            </div>
+            <div class="rightbox">
+                <div class="tabShow">
+                    <h1>Personal Info</h1>
+                    <h2>Full Name</h2>
+                    <input type="text" class="input" value="">
+                    <h2>Birthday</h2>
+                    <input type="text" class="input" value="">
+                    <h2>Gender</h2>
+                    <input type="text" class="input" value="">
+                    <h2>Email</h2>
+                    <input type="text" class="input" value="example@example.com">
+                    <h2>Password</h2>
+                    <input type="password" class="input" value="dfhjkfhsj">
+                    <button class="btn">Update</button>
+                </div>
+                <div class=" tabShow">
+                    <h1>Payment Info</h1>
+                    <h2>Payment Method</h2>
+                    <input type="text" class="input" value="Mastercard - 0202 **** **** 2289">
+                    <h2>Billing Address</h2>
+                    <input type="text" class="input" value="">
+                    <h2>ZipCode</h2>
+                    <input type="text" class="input" value="">
+                    <h2>Billing Date</h2>
+                    <input type="text" class="input" value="Jan 21,2018">
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+    <script src="jquery/jquery.js"></script>
+    <script>
+        const tabBtn = document.querySelectorAll(".tab");
+        const tab = document.querySelectorAll(".tabShow");
+
+        function tabs(panelIndex) {
+            tab.forEach(function(node) {
+                node.style.display = "none";
+            });
+            tab[panelIndex].style.display = "block";
+        }
+        tabs(0);
+
+    </script>
+    <script>
+        jQuery(".tab").click(function() {
+            jQuery(this).addClass("active").siblings().removeClass("active");
+        });
+
+        function goBack() {
+            
+            window.history.back();
+        }
+
+    </script>
+</body>
+
+</html>

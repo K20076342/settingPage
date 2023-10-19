@@ -1,0 +1,29 @@
+ <div>
+        <form onSubmit={handleSubmit}>
+        <div>
+          <Input type="text" text="Name" defaultValue={user.name} name="name" handleChange={handleChange}/>
+          <Input type="text" text="Email" defaultValue={user.email} disabled name="email" handleChange={handleChange}/>
+          <Input
+            name="password"
+            type={visible ? "text" : "password"}
+            icon={visible ? <MdVisibility /> : <MdVisibilityOff />}
+            text="Password"
+            handleClick={handleClick}
+            handleChange={handleChange}
+          />
+          <Input
+            name="cf_password"
+            type={visible ? "text" : "password"}
+            icon={visible ? <MdVisibility /> : <MdVisibilityOff />}
+            text="Confirm Password"
+            handleClick={handleClick}
+            handleChange={handleChange}
+          />
+          <div>
+            <button type="submit">Update</button>
+          </div>
+        </div>
+      </form>
+        </div>
+      
+      </div>
